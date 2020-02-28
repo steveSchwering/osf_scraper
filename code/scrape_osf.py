@@ -12,13 +12,18 @@ import pandas as pd
 from furl import furl
 
 class OSF_Scraper():
-	def __init__(self, OSF_API_URL = 'https://api.osf.io/v2/'):
+	def __init__(self, 
+				 OSF_API_URL = 'https://api.osf.io/v2/',
+				 saved_scraped = True):
 		# Logger
 		logging.basicConfig(format = '%(asctime)s - %(levelname)s - %(message)s', level = logging.DEBUG)
 		logging.info('Created OSF scraper object')
 
 		# Base URL
 		self.OSF_API_URL = OSF_API_URL
+
+		# Save flag
+		self.save_scraped = save_scraped
 
 		# Get search parameters
 		search_parameters_l = self.get_search_parameters()
@@ -28,8 +33,7 @@ class OSF_Scraper():
 
 	def get_search_parameters(self, 
 							  parameter_dir = '../search_parameters', 
-							  parent_path = None,
-							  glob_search = '*.tsv'):
+							  parent_path = None):
 		"""
 		Returns a dictionary of search parameters found in directory
 		+ keys: names of parameters
@@ -39,16 +43,13 @@ class OSF_Scraper():
 		output_parameters = []
 
 		if not parent_path:
-			parameter_paths = pathlib.Path().cwd().joinpath(parameter_dir).glob(glob_search)
+			parameter_paths = pathlib.Path().cwd().joinpath(parameter_dir).glob('*.tsv')
 		else:
-			parameter_paths = pathlib.Path().joinpath(parent_path, parameter_dir).glob(glob_search)
+			parameter_paths = pathlib.Path().joinpath(parent_path, parameter_dir).glob('*.tsv')
 
 		for parameter_path in parameter_paths:
 
-			if 'tsv' in parameter_path.suffix:
-				df = pd.read_csv(parameter_path, sep = '\t')
-			elif 'csv' in parameter_path.suffix:
-				df = pd.read_csv(parameter_path, sep = ',')
+			df = pd.read_csv(parameter_path, sep = '\t')
 
 			output_parameters += df.T.to_dict().values()
 
@@ -111,11 +112,14 @@ class OSF_Scraper():
 
 			if links['next']:
 				next_page = furl(links['next'])
-				logging.debug(f'Adding next page of {next_page.url} to queue')
+
+				next_page_num = next_page.args['page']
+				final_page_num = furl(links['last']).args['page']
+
+				logging.debug(f'Adding page {next_page.url} ({next_page_num} of {final_page_num}) to queue')
 				self.request_queue.append(next_page)
 
-	def process_url(self, url,
-					save_extension = '.tsv'):
+	def process_url(self, url):
 		"""
 		Requests url, processes returned nodes, and saves node info
 		Returns links to the next requests
@@ -124,15 +128,16 @@ class OSF_Scraper():
 		data, links = self.request_nodes(url)
 
 		# Save data storage
-		parsed_info = {'url': url.url,
+		parsed_info = {'query_url': url.url,
 					   'time_access': time.strftime("%a-%Y-%m-%d %H:%M:%S", time.localtime())}
 
 		# Parse node and save
 		for node in data:
 			parsed_info = self.parse_node(node, parsed_info = parsed_info)
-			self.save_node_info(parsed_info = parsed_info, 
-								filename = parsed_info['id'],
-								save_extension = save_extension)
+
+			if self.save_scraped:
+				self.save_node_info(parsed_info = parsed_info, 
+									filename = parsed_info['id'])
 
 		# Return links
 		return links
@@ -170,28 +175,27 @@ class OSF_Scraper():
 		return parsed_info
 
 	def save_node_info(self, parsed_info, filename,
-					   save_extension = '.tsv',
-					   node_dir = 'nodes'):
+					   node_dir = 'osf_nodes'):
 		"""
-		Creates a folder for the accessed node and saves csv of data
+		Creates a folder for the accessed node and saves tsv of data
 		"""
 
 		# Create directory
 		try:
 			folder_path = pathlib.Path().cwd().parent.joinpath(node_dir, filename)
-			pathlib.Path.mkdir(folder_path)
+			pathlib.Path.mkdir(folder_path, parents = True) # Parents makes missing parent directories, too
 		except FileExistsError:
 			title = parsed_info['title']
 			logging.debug(f'Folder for "{title}" already exists -- skipping')
 			return
 
 		# Save file
-		file_path = folder_path.joinpath(filename).with_suffix(save_extension)
+		file_path = folder_path.joinpath(filename).with_suffix('.tsv')
 		with open (file_path, 'w') as f:
 			writer = csv.DictWriter(f, fieldnames = parsed_info.keys(), delimiter = '\t')
 			writer.writeheader()
 			writer.writerow(parsed_info)
 
 if __name__ == '__main__':
-	scraper = OSF_Scraper()
+	scraper = OSF_Scraper(save_scraped = False)
 	scraper.feed_requests()
