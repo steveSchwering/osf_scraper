@@ -14,7 +14,7 @@ from furl import furl
 class OSF_Scraper():
 	def __init__(self, 
 				 OSF_API_URL = 'https://api.osf.io/v2/',
-				 saved_scraped = True):
+				 save_scraped = True):
 		# Logger
 		logging.basicConfig(format = '%(asctime)s - %(levelname)s - %(message)s', level = logging.DEBUG)
 		logging.info('Created OSF scraper object')
