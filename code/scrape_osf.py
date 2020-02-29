@@ -1,35 +1,35 @@
 # Author: Steve Schwering
 # Reference: https://www.youtube.com/watch?v=PTO78zxkEtM
 # Reference: https://osf.io/rs986/
+# Reference: https://developer.osf.io/#tag/Nodes
+# Reference: https://api.osf.io/v2/nodes/
 
-import csv
 import time
 import json
 import pathlib
 import requests
 import logging
 import pandas as pd
+import helper_functions as hf
 from furl import furl
+from Node import Node
 
 class OSF_Scraper():
 	def __init__(self, 
-				 OSF_API_URL = 'https://api.osf.io/v2/',
-				 save_scraped = True):
+				 OSF_API_URL = 'https://api.osf.io/v2/'):
 		# Logger
 		logging.basicConfig(format = '%(asctime)s - %(levelname)s - %(message)s', level = logging.DEBUG)
-		logging.info('Created OSF scraper object')
+		logging.debug('Created OSF scraper object')
 
 		# Base URL
 		self.OSF_API_URL = OSF_API_URL
 
-		# Save flag
-		self.save_scraped = save_scraped
-
-		# Get search parameters
-		search_parameters_l = self.get_search_parameters()
+		# Track nodes
+		self.nodes = []
 
 		# Start url queue
-		self.initialize_queue(search_parameters_l)
+		self.request_queue = []
+		self.initialize_queue(self.get_search_parameters())
 
 	def get_search_parameters(self, 
 							  parameter_dir = '../search_parameters', 
@@ -53,35 +53,32 @@ class OSF_Scraper():
 
 			output_parameters += df.T.to_dict().values()
 
-		logging.info(f'Found {len(output_parameters)} set of parameter(s) to search')
+		logging.debug(f'Found {len(output_parameters)} set(s) of parameters to search')
 		return output_parameters
 
-	def initialize_queue(self, search_parameters_l: list):
+	def initialize_queue(self, search_parameters_l: list,
+						 subdir = 'nodes/'):
 		"""
-		Initializes the request queue by generating urls from the search parameters
+		Initializes the request queue from search parameters
 		"""
-		self.request_queue = [url for url in self.generator_param_urls(search_parameters_l)]
+		for search_params in search_parameters_l:
 
-	def generator_param_urls(self, search_parameters_l: list,
-							 subdir_node = 'nodes/'):
-		"""
-		Generator of urls
-		"""
-		for parameters in search_parameters_l:
-			yield self.assemble_url(parameters = parameters,
-									subdir_node = subdir_node)
+			url = self.assemble_url(subdir = subdir, parameters = search_params)
 
-	def assemble_url(self, parameters: dict, 
-					 subdir_node = 'nodes/',
+			self.queue_url(url = url, subdir = subdir)
+
+	def assemble_url(self, 
+					 subdir = 'nodes/',
+					 parameters = {},
 					 case_sensitive = False):
 		"""
-		Construct URLs by which OSF JSON data can be accessed. 
-		Parameters are supplied to filters restrict how nodes are accessed.
-		+ furl implements a url object: https://github.com/gruns/furl
+		All urls are constructed with static OSF_API_URL
+		+ subdir targets a specific section of the OSF API
+		+ parameters filter the request
 		"""
 		url = furl(self.OSF_API_URL)
 
-		url.path /= subdir_node
+		url.path /= subdir
 
 		# Parameters need be formatted with various values passed to filter
 		for parameter_name in parameters:
@@ -98,104 +95,74 @@ class OSF_Scraper():
 
 		return url
 
+	def queue_url(self, url, subdir):
+		"""
+		Adds a new url to the queue and queue info
+		"""
+		logging.debug(f'Adding {url.url} to position {len(self.request_queue) + 1} of queue')
+		self.request_queue.append({'url' : url,
+								   'subdir' : subdir})
+
 	def feed_requests(self):
+		"""
+		Janky generator
+		"""
+		try:
+			_ = self.request_queue.pop(0)
+		except IndexError:
+			logging.debug(f'No elements in request queue. You shouldn\'t be here.')
+			raise
+		return _
+
+	def scrape(self):
 		"""
 		Takes urls from request queue and makes requests
 		If more urls are detected in returned links, urls are added to request queue
 		"""
-		logging.info(f'Starting requests with feed of length {len(self.request_queue)}')
+		logging.debug(f'Starting request feed of length {len(self.request_queue)}')
 
-		for url in self.request_queue:
-			links = self.process_url(url)
+		while self.request_queue:
+			request_info = self.feed_requests()
 
-			# TODO: Project how much longer scraping will take given 'last' parameter in links
+			response, response_time = self.request_url(url = request_info['url'])
 
-			if links['next']:
-				next_page = furl(links['next'])
+			links = self.parse_response(response = response, 
+										subdir = request_info['subdir'], 
+										meta_data = {'url' : request_info['url'],
+													 'response_time' : response_time})
 
-				next_page_num = next_page.args['page']
-				final_page_num = furl(links['last']).args['page']
+			for link in links:
+				self.queue_url(url = link['url'], subdir = link['subdir'])
 
-				logging.debug(f'Adding page {next_page.url} ({next_page_num} of {final_page_num}) to queue')
-				self.request_queue.append(next_page)
-
-	def process_url(self, url):
-		"""
-		Requests url, processes returned nodes, and saves node info
-		Returns links to the next requests
-		"""
-		# Request data from OSF
-		data, links = self.request_nodes(url)
-
-		# Save data storage
-		parsed_info = {'query_url': url.url,
-					   'time_access': time.strftime("%a-%Y-%m-%d %H:%M:%S", time.localtime())}
-
-		# Parse node and save
-		for node in data:
-			parsed_info = self.parse_node(node, parsed_info = parsed_info)
-
-			if self.save_scraped:
-				self.save_node_info(parsed_info = parsed_info, 
-									filename = parsed_info['id'])
-
-		# Return links
-		return links
-
-	def request_nodes(self, url: str):
+	def request_url(self, url):
 		"""
 		Request a set of data from the OSF API
 		"""
-		response = requests.get(url).json() 
+		response_data = requests.get(url).json()
+		response_time = time.strftime("%a-%Y-%m-%d %H:%M:%S", time.localtime())
 
-		return response['data'], response['links']
+		return response_data, response_time
 
-	def parse_node(self, node: dict, parsed_info = {}):
+	def parse_response(self, response, subdir, meta_data = {}):
 		"""
-		Takes responses from OSF API and converts responses into useful format
-		Reference: https://developer.osf.io/#tag/Nodes
-		Reference: https://api.osf.io/v2/nodes/
-		+ Values extracted:
-		+-- name of study
-		+-- osf ID of study
-		+-- matched search parameter
-		+-- matched parameter value
-		+-- study description
+		Parses response and returns next urls
 		"""
-		title = node['attributes']['title']
-		logging.info(f'Parsing "{title}"')
+		links = []
 
-		parsed_info['id'] = node['id']
-		parsed_info['title'] = title
-		parsed_info['tags'] = node['attributes']['tags']
-		parsed_info['category'] = node['attributes']['category']
-		parsed_info['description'] = node['attributes']['description'].strip().lower()
-		parsed_info['date_created'] = node['attributes']['date_created']
+		# Nodes contain information about the indvidual studies
+		if subdir == 'nodes/':
 
-		return parsed_info
+			for node_data in response['data']:
+				self.nodes.append(Node(node_data = node_data,
+									   meta_data = meta_data))
 
-	def save_node_info(self, parsed_info, filename,
-					   node_dir = 'osf_nodes'):
-		"""
-		Creates a folder for the accessed node and saves tsv of data
-		"""
+			# Next link is always another node
+			if response['links']['next']:
+				links.append({'url': furl(response['links']['next']),
+							  'subdir' : 'nodes/'})
 
-		# Create directory
-		try:
-			folder_path = pathlib.Path().cwd().parent.joinpath(node_dir, filename)
-			pathlib.Path.mkdir(folder_path, parents = True) # Parents makes missing parent directories, too
-		except FileExistsError:
-			title = parsed_info['title']
-			logging.debug(f'Folder for "{title}" already exists -- skipping')
-			return
-
-		# Save file
-		file_path = folder_path.joinpath(filename).with_suffix('.tsv')
-		with open (file_path, 'w') as f:
-			writer = csv.DictWriter(f, fieldnames = parsed_info.keys(), delimiter = '\t')
-			writer.writeheader()
-			writer.writerow(parsed_info)
+		return links
 
 if __name__ == '__main__':
-	scraper = OSF_Scraper(save_scraped = False)
-	scraper.feed_requests()
+	scraper = OSF_Scraper()
+	scraper.scrape()
