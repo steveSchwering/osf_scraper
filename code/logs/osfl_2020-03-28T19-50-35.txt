@@ -1,6 +1,0 @@
-2020-03-28 19:50:35,397 - 2020-03-28T19-50-35 - DEBUG - Initialized logger
-2020-03-28 19:50:35,404 - 2020-03-28T19-50-35 - DEBUG - Found 1 set(s) parameters to search.
-2020-03-28 19:50:41,340 - 2020-03-28T19-50-35 - DEBUG - api.osf.io "GET /v2/nodes?filter[tags][icontains]=working memory&page[size]=100" 200
-2020-03-28 19:50:41,340 - 2020-03-28T19-50-35 - DEBUG - Parsing search <https://api.osf.io/v2/nodes/?filter%5Btags%5D%5Bicontains%5D=working+memory&page%5Bsize%5D=100>
-2020-03-28 19:50:45,012 - 2020-03-28T19-50-35 - DEBUG - api.osf.io "GET /v2/nodes/?filter[tags][icontains]=working memory&page=2&page[size]=100" 200
-2020-03-28 19:50:45,012 - 2020-03-28T19-50-35 - DEBUG - Parsing search <https://api.osf.io/v2/nodes/?filter%5Btags%5D%5Bicontains%5D=working+memory&page=2&page%5Bsize%5D=100>

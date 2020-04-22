@@ -1,8 +1,0 @@
-2020-03-28 19:39:24,600 - 2020-03-28T19-39-24 - DEBUG - Initialized logger
-2020-03-28 19:39:24,607 - 2020-03-28T19-39-24 - DEBUG - Found 1 set(s) parameters to search.
-2020-03-28 19:39:32,030 - 2020-03-28T19-39-24 - DEBUG - api.osf.io "GET /v2/nodes?filter[tags][icontains]=working memory&page[size]=100" 200
-2020-03-28 19:39:32,030 - 2020-03-28T19-39-24 - DEBUG - Parsing search <https://api.osf.io/v2/nodes/?filter%5Btags%5D%5Bicontains%5D=working+memory&page%5Bsize%5D=100>
-2020-03-28 19:39:35,061 - 2020-03-28T19-39-24 - DEBUG - api.osf.io "GET /v2/nodes/?filter[tags][icontains]=working memory&page=2&page[size]=100" 200
-2020-03-28 19:39:35,065 - 2020-03-28T19-39-24 - DEBUG - Parsing search <https://api.osf.io/v2/nodes/?filter%5Btags%5D%5Bicontains%5D=working+memory&page=2&page%5Bsize%5D=100>
-2020-03-28 19:39:35,285 - 2020-03-28T19-39-24 - DEBUG - api.osf.io "GET /v2/nodes/%3Cbuilt-in%20function%20id%3E/children?" 404
-2020-03-28 19:39:35,285 - 2020-03-28T19-39-24 - DEBUG - Request returned non-200 status code. Cannot parse search results.
