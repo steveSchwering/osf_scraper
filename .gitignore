@@ -1,4 +1,5 @@
 .DS_Store
 
 # Data is stored in osf_nodes folder
-osf_nodes/
+/data
+/code/logs
