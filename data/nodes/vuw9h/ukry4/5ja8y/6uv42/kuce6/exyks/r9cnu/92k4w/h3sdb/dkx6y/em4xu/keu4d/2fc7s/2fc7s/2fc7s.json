@@ -1,0 +1,73 @@
+{
+    "accessed_datetime": "2020-03-28T19:55:14",
+    "ancestors": [
+        "vuw9h",
+        "ukry4",
+        "5ja8y",
+        "6uv42",
+        "kuce6",
+        "exyks",
+        "r9cnu",
+        "92k4w",
+        "h3sdb",
+        "dkx6y",
+        "em4xu",
+        "keu4d",
+        "2fc7s"
+    ],
+    "attributes": {
+        "category": "software",
+        "date_created": "2019-04-29T15:29:34.626415",
+        "date_modified": "2020-03-04T16:22:26.507590",
+        "description": "A standardized task  which can be used to study mental load, fatigue and different aspects of cognitive processing (working memory, attention, etc.)",
+        "id": "2fc7s",
+        "preprint": false,
+        "public": true,
+        "registration": false,
+        "tags": [
+            "attention",
+            "cognitive fatigue",
+            "Cognitive task",
+            "fatigue",
+            "MATLAB",
+            "memory",
+            "mental fatigue",
+            "Mental task",
+            "Random Pattern",
+            "selective attention",
+            "visual attention",
+            "visual search",
+            "working memory"
+        ],
+        "title": "WAME1.0, A standardized computer task to induce cognitive load, and develop fatigue",
+        "wiki": true
+    },
+    "children": [],
+    "files": [
+        {
+            "attributes": {
+                "date_created": "2019-04-29T15:32:41.607347Z",
+                "date_modified": "2019-04-29T15:32:41.607347Z",
+                "guid": "6a8hr",
+                "kind": "file",
+                "name": "WAME1.0.zip",
+                "size": 152277
+            },
+            "id": "5cc7191900a81000175bdce7",
+            "links": {
+                "download_link": "https://osf.io/download/6a8hr/",
+                "self_link": "https://api.osf.io/v2/files/5cc7191900a81000175bdce7/"
+            }
+        }
+    ],
+    "links": {
+        "children_link": "https://api.osf.io/v2/nodes/2fc7s/children/",
+        "files_link": "https://api.osf.io/v2/nodes/2fc7s/files/",
+        "self_link": "https://api.osf.io/v2/nodes/2fc7s/"
+    },
+    "parent": null,
+    "searched": {
+        "children": true,
+        "files": true
+    }
+}

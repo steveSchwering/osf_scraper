@@ -1,0 +1,102 @@
+{
+    "accessed_datetime": "2020-03-28T19:55:14",
+    "ancestors": [
+        "vuw9h",
+        "ukry4",
+        "5ja8y",
+        "6uv42",
+        "kuce6",
+        "exyks",
+        "r9cnu",
+        "92k4w",
+        "h3sdb",
+        "dkx6y",
+        "em4xu",
+        "keu4d",
+        "2fc7s",
+        "xuk3b",
+        "g983h",
+        "f3ffh",
+        "nuh6m",
+        "gbujw",
+        "j5v2s"
+    ],
+    "attributes": {
+        "category": "project",
+        "date_created": "2017-11-20T13:14:34.122017",
+        "date_modified": "2020-02-08T03:56:34.410374",
+        "description": "We aim at investigating causal relations between behaviour during reinforcement-based visuomotor rotation tasks and individual characteristics such as working memory capacity and dopamine-related genetic profiles.",
+        "id": "j5v2s",
+        "preprint": false,
+        "public": true,
+        "registration": false,
+        "tags": [
+            "dopamine",
+            "genetics",
+            "motor adaptation",
+            "reinforcement",
+            "visuomotor adaptation",
+            "working memory"
+        ],
+        "title": "Genetic profile, reinforcement and visuomotor adaptation",
+        "wiki": true
+    },
+    "children": [],
+    "files": [
+        {
+            "attributes": {
+                "date_created": "2017-11-20T13:25:08.141110Z",
+                "date_modified": "2017-11-20T13:25:08.141110Z",
+                "guid": "sxqvy",
+                "kind": "file",
+                "name": "Pre-register_genetics_study_Codol_Holland_Galea.pdf",
+                "size": 95895
+            },
+            "id": "5a12d7b4594d900264cad966",
+            "links": {
+                "download_link": "https://osf.io/download/sxqvy/",
+                "self_link": "https://api.osf.io/v2/files/5a12d7b4594d900264cad966/"
+            }
+        },
+        {
+            "attributes": {
+                "date_created": "2020-02-08T03:52:01.513909Z",
+                "date_modified": "2020-02-08T03:52:01.513909Z",
+                "guid": "6xpdm",
+                "kind": "file",
+                "name": "Pre-register genetics study-holland-codol-galea.pdf",
+                "size": 140355
+            },
+            "id": "5e3e3061032a4d01e9e71789",
+            "links": {
+                "download_link": "https://osf.io/download/6xpdm/",
+                "self_link": "https://api.osf.io/v2/files/5e3e3061032a4d01e9e71789/"
+            }
+        },
+        {
+            "attributes": {
+                "date_created": "2020-02-08T03:56:34.198684Z",
+                "date_modified": "2020-02-08T03:56:34.198684Z",
+                "guid": "vb83u",
+                "kind": "file",
+                "name": "dataset_and_analyses.zip",
+                "size": 231497279
+            },
+            "id": "5e3e3172032a4d01f1e70317",
+            "links": {
+                "download_link": "https://osf.io/download/vb83u/",
+                "self_link": "https://api.osf.io/v2/files/5e3e3172032a4d01f1e70317/"
+            }
+        }
+    ],
+    "links": {
+        "children_link": "https://api.osf.io/v2/nodes/j5v2s/children/",
+        "files_link": "https://api.osf.io/v2/nodes/j5v2s/files/",
+        "self_link": "https://api.osf.io/v2/nodes/j5v2s/"
+    },
+    "parent": null,
+    "searched": {
+        "children": true,
+        "files": true
+    }
+}

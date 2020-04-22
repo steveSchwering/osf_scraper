@@ -1,0 +1,112 @@
+{
+    "accessed_datetime": "2020-03-28T19:55:14",
+    "ancestors": [
+        "vuw9h",
+        "ukry4",
+        "5ja8y",
+        "6uv42",
+        "kuce6",
+        "exyks",
+        "r9cnu",
+        "92k4w",
+        "h3sdb",
+        "dkx6y",
+        "em4xu",
+        "keu4d"
+    ],
+    "attributes": {
+        "category": "project",
+        "date_created": "2018-10-23T15:28:52.002077",
+        "date_modified": "2019-04-28T11:59:01.784152",
+        "description": "It is well-known that age differentially impacts aspects of long-term episodic memory (EM): Whereas a binding deficit indicates that older adults are less capable than younger adults to encode or retrieve associations between information (e.g., the pairing between two memoranda, such as lock \u2013 race), item memory is relatively intact (e.g., recognizing lock without its original pairing). We tested whether this deficit could be corrected by facilitating establishment of the bindings in working memory (WM) through adapting the semantic relatedness of studied pairs according to participants\u2019 ongoing performance (Experiments 1 and 2). We also examined whether this was evident for the long-term retention of pairs that were not tested in WM (Experiment 2). The results revealed matched binding and item memory in WM and EM between age groups. Most importantly, older adults required increased semantic strength between word pairs to achieve similar performance to that of younger adults, regardless of whether pairs were immediately tested during the WM task. These findings indicate that relying on their superior semantic memory can correct the commonly exhibited profound deficit in binding memory in older age. \n",
+        "id": "keu4d",
+        "preprint": false,
+        "public": true,
+        "registration": false,
+        "tags": [
+            "aging",
+            "associative memory",
+            "cognitive aging",
+            "episodic memory",
+            "modeling",
+            "multinomial processing tree modeling",
+            "semantic memory",
+            "working memory"
+        ],
+        "title": "Semantic Relatedness Corrects the Age-Related Binding Deficit in Working Memory and Episodic Memory",
+        "wiki": true
+    },
+    "children": [],
+    "files": [
+        {
+            "attributes": {
+                "date_created": null,
+                "date_modified": null,
+                "guid": null,
+                "kind": "folder",
+                "name": "Experiment Files",
+                "size": null
+            },
+            "id": "5bcf40ae8b014c001d3e3860",
+            "links": {
+                "download_link": null,
+                "self_link": "https://api.osf.io/v2/files/5bcf40ae8b014c001d3e3860/"
+            }
+        },
+        {
+            "attributes": {
+                "date_created": null,
+                "date_modified": null,
+                "guid": null,
+                "kind": "folder",
+                "name": "Data and Analysis Files",
+                "size": null
+            },
+            "id": "5bcf40bd8b014c001c3e38e3",
+            "links": {
+                "download_link": null,
+                "self_link": "https://api.osf.io/v2/files/5bcf40bd8b014c001c3e38e3/"
+            }
+        },
+        {
+            "attributes": {
+                "date_created": null,
+                "date_modified": null,
+                "guid": null,
+                "kind": "folder",
+                "name": "Preregistrations",
+                "size": null
+            },
+            "id": "5cc593ba42c4b70018b37056",
+            "links": {
+                "download_link": null,
+                "self_link": "https://api.osf.io/v2/files/5cc593ba42c4b70018b37056/"
+            }
+        },
+        {
+            "attributes": {
+                "date_created": "2019-04-28T11:59:01.546668Z",
+                "date_modified": "2019-04-28T11:59:01.546668Z",
+                "guid": "zeufd",
+                "kind": "file",
+                "name": "LoaizaSrokova_accepted.pdf",
+                "size": 390518
+            },
+            "id": "5cc5958500a81000175a8179",
+            "links": {
+                "download_link": "https://osf.io/download/zeufd/",
+                "self_link": "https://api.osf.io/v2/files/5cc5958500a81000175a8179/"
+            }
+        }
+    ],
+    "links": {
+        "children_link": "https://api.osf.io/v2/nodes/keu4d/children/",
+        "files_link": "https://api.osf.io/v2/nodes/keu4d/files/",
+        "self_link": "https://api.osf.io/v2/nodes/keu4d/"
+    },
+    "parent": null,
+    "searched": {
+        "children": true,
+        "files": true
+    }
+}

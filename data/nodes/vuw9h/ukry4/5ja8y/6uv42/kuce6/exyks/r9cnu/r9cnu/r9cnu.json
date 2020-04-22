@@ -1,0 +1,94 @@
+{
+    "accessed_datetime": "2020-03-28T19:54:34",
+    "ancestors": [
+        "vuw9h",
+        "ukry4",
+        "5ja8y",
+        "6uv42",
+        "kuce6",
+        "exyks",
+        "r9cnu"
+    ],
+    "attributes": {
+        "category": "project",
+        "date_created": "2019-01-08T16:56:02.742060",
+        "date_modified": "2019-09-03T10:30:00.031921",
+        "description": "This is the dataset and analytic procedures for the manuscript with the same name as above.",
+        "id": "r9cnu",
+        "preprint": true,
+        "public": true,
+        "registration": false,
+        "tags": [
+            "Academic Achievement",
+            "Cognitive Flexibility",
+            "Executive Function",
+            "General Cognitive Ability",
+            "Inhibition",
+            "Literacy",
+            "Metacognition",
+            "Numeracy",
+            "Planning",
+            "Working Memory"
+        ],
+        "title": "Executive Function and Metacognition Show Independent Associations with Academic Performance During Late Childhood and Early Adolescence ",
+        "wiki": true
+    },
+    "children": [],
+    "files": [
+        {
+            "attributes": {
+                "date_created": "2019-09-01T09:00:26.253099Z",
+                "date_modified": "2019-09-01T09:00:26.253099Z",
+                "guid": "36kha",
+                "kind": "file",
+                "name": "Procedures and variables.pdf",
+                "size": 35171
+            },
+            "id": "5d6b88aa80f9b50016645cdc",
+            "links": {
+                "download_link": "https://osf.io/download/36kha/",
+                "self_link": "https://api.osf.io/v2/files/5d6b88aa80f9b50016645cdc/"
+            }
+        },
+        {
+            "attributes": {
+                "date_created": null,
+                "date_modified": null,
+                "guid": null,
+                "kind": "folder",
+                "name": "Scripts",
+                "size": null
+            },
+            "id": "5d6b88d072151000199ef95c",
+            "links": {
+                "download_link": null,
+                "self_link": "https://api.osf.io/v2/files/5d6b88d072151000199ef95c/"
+            }
+        },
+        {
+            "attributes": {
+                "date_created": null,
+                "date_modified": null,
+                "guid": null,
+                "kind": "folder",
+                "name": "Dataset",
+                "size": null
+            },
+            "id": "5d6b8a5180f9b5001762dc4d",
+            "links": {
+                "download_link": null,
+                "self_link": "https://api.osf.io/v2/files/5d6b8a5180f9b5001762dc4d/"
+            }
+        }
+    ],
+    "links": {
+        "children_link": "https://api.osf.io/v2/nodes/r9cnu/children/",
+        "files_link": "https://api.osf.io/v2/nodes/r9cnu/files/",
+        "self_link": "https://api.osf.io/v2/nodes/r9cnu/"
+    },
+    "parent": null,
+    "searched": {
+        "children": true,
+        "files": true
+    }
+}

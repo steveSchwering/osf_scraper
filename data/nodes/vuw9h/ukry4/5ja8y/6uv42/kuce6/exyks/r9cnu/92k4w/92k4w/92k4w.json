@@ -1,0 +1,41 @@
+{
+    "accessed_datetime": "2020-03-28T19:54:34",
+    "ancestors": [
+        "vuw9h",
+        "ukry4",
+        "5ja8y",
+        "6uv42",
+        "kuce6",
+        "exyks",
+        "r9cnu",
+        "92k4w"
+    ],
+    "attributes": {
+        "category": "project",
+        "date_created": "2020-03-12T12:41:14.817055",
+        "date_modified": "2020-03-16T13:28:12.396112",
+        "description": "Working memory (WM) is a cognitive system that provides access to temporarily maintained information for further processing (Miyake &amp; Shah, 1999). Visual WM (VWM) refers to maintaining and directing the visual information needed for higher cognitive processing in the present moment (Luck &amp; Vogel, 2013). WM performance is a mixture of the quantitative number of objects that can be held in WM (capacity) and the qualitative resolution of the representations of these objects (precision). \n\nNon-invasive brain stimulation techniques such as transcranial direct current stimulation (tDCS) have gained growing research interest as a promising intervention tool to enhance WM performance  (Andrews et al., 2011; Birba et al., 2017; Brunoni &amp; Vanderhasselt, 2014; Bystad et al., 2016; Fregni et al., 2005; Hoon Ohn et al., 2008; Molaee-Ardekani et al., 2013; Nikolin et al., 2017). TDCS delivers weak current from anode to cathode through the skull, generating electric fields to modulate cortical activities and facilitate neuroplasticity (Ruffini et al., 2013; Roche et al., 2015). \n\nMore recently, inconsistent tDCS effects on WM performance have been reported. Some research has found that WM capacity can be improved by tDCS over the dorsolateral prefrontal cortex (DLPFC) and/or posterior parietal cortex (PPC; Andrews et al., 2011; Arciniega et al., 2018; Fregni et al., 2005; Li et al., 2017). Likewise, one study by Heinen et al. (2016) showed that PPC stimulation can potentially enhance WM precision. However, other authors found no effects on WM performance by tDCS over either or both brain regions (Brunoni &amp; Vanderhasselt, 2014; Friedrich et al., 2019; Horvath et al., 2015; Robison et al., 2017). These contrary findings suggest further investigation in tDCS effects on both WM capacity and precision, comparing the stimulations between DLPFC and PPC. \n\nWang et al. (2019) recently reported a particularly intriguing finding. They tested the effects of 15-minute anodal tDCS over the left DLPFC and the right PPC relative to a sham condition for 20 participants in a within-subject design. VWM capacity and precision were measured with a continuous reproduction task. In this task, participants memorised the orientations of 2, 4, or 6 bars on a screen. Participants were then asked to reproduce the orientation of one of the bars by mouse-click. The deviation of the reproduced orientation from the original orientation was then used to estimate VWM capacity and precision for each participant, set size, and stimulation condition. Wang et al. observed a selective increase in VWM capacity at set size 6 after PPC relative to sham stimulation, but not after DLPFC stimulation, any other set size, or on VWM precision. \n\nThe potential of brief tDCS to enhance VWM capacity renders it important to test the replicability of this finding. In addition, several aspects of Wang et al.\u2019s (2019) study are potentially problematic and warrant addressing. First, the small sample size translates into low statistical power even for moderate effect sizes, and low statistical power can lead to false-positive findings (Button et al., 2013). The reported effect size is very large (d = 1.028), but this may reflect an overestimate (cf. Halsey et al., 2015). Second, Wang et al. (2019) administered only 60 trials per design cell, which may have led to unreliable estimates of VWM capacity and precision. Third, Wang et al. (2019) failed to assign an equal number of participants to every possible counterbalanced sequence. Therefore, carryover effects across sessions (e.g., practice) have not been adequately controlled in the given VWM tasks. Finally, because Wang et al. (2019) used rotated bars as stimuli, the unique angles of their stimuli effectively ranged only from 0\u00b0 to 180\u00b0, leaving room for developing task-specific strategies. Some, but not all, participants may have realized they could simply memorize the location of just one end of the bar rather than the actual orientation of the bar, thereby making the task considerably easier. This could be problematic in particular in combination with the incomplete counterbalancing and the small number of participants.\n\nIn this preregistered experiment, we will conceptually replicate Wang et al.\u2019s (2019) study and address the potential issues of their study by using a bigger sample size, larger number of trials, complete counterbalancing, and stimuli that use the full space of possible angles (360\u00b0).",
+        "id": "92k4w",
+        "preprint": false,
+        "public": true,
+        "registration": false,
+        "tags": [
+            "tDCS",
+            "working memory"
+        ],
+        "title": "The tDCS effect on visual working memory over DLPFC and PPC",
+        "wiki": true
+    },
+    "children": [],
+    "files": [],
+    "links": {
+        "children_link": "https://api.osf.io/v2/nodes/92k4w/children/",
+        "files_link": "https://api.osf.io/v2/nodes/92k4w/files/",
+        "self_link": "https://api.osf.io/v2/nodes/92k4w/"
+    },
+    "parent": null,
+    "searched": {
+        "children": true,
+        "files": true
+    }
+}

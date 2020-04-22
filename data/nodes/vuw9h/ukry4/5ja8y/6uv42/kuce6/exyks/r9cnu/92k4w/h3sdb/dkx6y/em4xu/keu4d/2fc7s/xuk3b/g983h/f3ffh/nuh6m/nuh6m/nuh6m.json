@@ -1,0 +1,85 @@
+{
+    "accessed_datetime": "2020-03-28T19:55:14",
+    "ancestors": [
+        "vuw9h",
+        "ukry4",
+        "5ja8y",
+        "6uv42",
+        "kuce6",
+        "exyks",
+        "r9cnu",
+        "92k4w",
+        "h3sdb",
+        "dkx6y",
+        "em4xu",
+        "keu4d",
+        "2fc7s",
+        "xuk3b",
+        "g983h",
+        "f3ffh",
+        "nuh6m"
+    ],
+    "attributes": {
+        "category": "project",
+        "date_created": "2019-11-18T14:06:42.788197",
+        "date_modified": "2020-02-10T07:22:47.486285",
+        "description": "Collection of all first authored talks and posters that I (Gidon T. Frischkorn) held at psychological conferences and meetings. If you have questions regarding the materials, data, or analysis, please do not hesitate to contact me.",
+        "id": "nuh6m",
+        "preprint": false,
+        "public": true,
+        "registration": false,
+        "tags": [
+            "Cognitive Modeling",
+            "EEG",
+            "Executive Functions",
+            "Individual Differences",
+            "Intelligence",
+            "Working Memory"
+        ],
+        "title": "Conference Talks &amp; Posters",
+        "wiki": true
+    },
+    "children": [],
+    "files": [
+        {
+            "attributes": {
+                "date_created": null,
+                "date_modified": null,
+                "guid": null,
+                "kind": "folder",
+                "name": "Talks",
+                "size": null
+            },
+            "id": "5dd3b7df1d56d2000edeb761",
+            "links": {
+                "download_link": null,
+                "self_link": "https://api.osf.io/v2/files/5dd3b7df1d56d2000edeb761/"
+            }
+        },
+        {
+            "attributes": {
+                "date_created": null,
+                "date_modified": null,
+                "guid": null,
+                "kind": "folder",
+                "name": "Posters",
+                "size": null
+            },
+            "id": "5dd3b7e582d216000b4f6b10",
+            "links": {
+                "download_link": null,
+                "self_link": "https://api.osf.io/v2/files/5dd3b7e582d216000b4f6b10/"
+            }
+        }
+    ],
+    "links": {
+        "children_link": "https://api.osf.io/v2/nodes/nuh6m/children/",
+        "files_link": "https://api.osf.io/v2/nodes/nuh6m/files/",
+        "self_link": "https://api.osf.io/v2/nodes/nuh6m/"
+    },
+    "parent": null,
+    "searched": {
+        "children": true,
+        "files": true
+    }
+}

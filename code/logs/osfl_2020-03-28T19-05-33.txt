@@ -1,0 +1,34 @@
+2020-03-28 19:05:33,312 - 2020-03-28T19-05-33 - DEBUG - Initialized logger
+2020-03-28 19:05:33,324 - 2020-03-28T19-05-33 - DEBUG - Found 12 set(s) parameters to search.
+2020-03-28 19:05:35,081 - 2020-03-28T19-05-33 - DEBUG - api.osf.io "GET /v2/nodes?filter[tags][icontains]=serial recall&page[size]=100" 200
+2020-03-28 19:05:35,081 - 2020-03-28T19-05-33 - DEBUG - Parsing search <https://api.osf.io/v2/nodes/?filter%5Btags%5D%5Bicontains%5D=serial+recall&page%5Bsize%5D=100>
+2020-03-28 19:05:35,382 - 2020-03-28T19-05-33 - DEBUG - api.osf.io "GET /v2/nodes/8zycm/children?" 200
+2020-03-28 19:05:35,382 - 2020-03-28T19-05-33 - DEBUG - Parsing children from <https://api.osf.io/v2/nodes/8zycm/children/>
+2020-03-28 19:05:36,022 - 2020-03-28T19-05-33 - DEBUG - api.osf.io "GET /v2/nodes/8zycm/files/osfstorage?" 200
+2020-03-28 19:05:36,023 - 2020-03-28T19-05-33 - DEBUG - Parsing storage from <https://api.osf.io/v2/nodes/8zycm/files/osfstorage/>
+2020-03-28 19:05:36,314 - 2020-03-28T19-05-33 - DEBUG - api.osf.io "GET /v2/nodes/jpfmq/children?" 200
+2020-03-28 19:05:36,314 - 2020-03-28T19-05-33 - DEBUG - Parsing children from <https://api.osf.io/v2/nodes/jpfmq/children/>
+2020-03-28 19:05:36,862 - 2020-03-28T19-05-33 - DEBUG - api.osf.io "GET /v2/nodes/jpfmq/files/osfstorage?" 200
+2020-03-28 19:05:36,863 - 2020-03-28T19-05-33 - DEBUG - Parsing storage from <https://api.osf.io/v2/nodes/jpfmq/files/osfstorage/>
+2020-03-28 19:05:37,256 - 2020-03-28T19-05-33 - DEBUG - api.osf.io "GET /v2/nodes?filter[tags][icontains]=serial-recall&page[size]=100" 200
+2020-03-28 19:05:37,256 - 2020-03-28T19-05-33 - DEBUG - Parsing search <https://api.osf.io/v2/nodes/?filter%5Btags%5D%5Bicontains%5D=serial-recall&page%5Bsize%5D=100>
+2020-03-28 19:05:37,615 - 2020-03-28T19-05-33 - DEBUG - api.osf.io "GET /v2/nodes?filter[tags][icontains]=verbal working memory&page[size]=100" 200
+2020-03-28 19:05:37,615 - 2020-03-28T19-05-33 - DEBUG - Parsing search <https://api.osf.io/v2/nodes/?filter%5Btags%5D%5Bicontains%5D=verbal+working+memory&page%5Bsize%5D=100>
+2020-03-28 19:05:40,747 - 2020-03-28T19-05-33 - DEBUG - api.osf.io "GET /v2/nodes?filter[tags][icontains]=short-term memory&page[size]=100" 200
+2020-03-28 19:05:40,748 - 2020-03-28T19-05-33 - DEBUG - Parsing search <https://api.osf.io/v2/nodes/?filter%5Btags%5D%5Bicontains%5D=short-term+memory&page%5Bsize%5D=100>
+2020-03-28 19:05:41,060 - 2020-03-28T19-05-33 - DEBUG - api.osf.io "GET /v2/nodes/ukry4/children?" 200
+2020-03-28 19:05:41,061 - 2020-03-28T19-05-33 - DEBUG - Parsing children from <https://api.osf.io/v2/nodes/ukry4/children/>
+2020-03-28 19:05:41,646 - 2020-03-28T19-05-33 - DEBUG - api.osf.io "GET /v2/nodes/ukry4/files/osfstorage?" 200
+2020-03-28 19:05:41,646 - 2020-03-28T19-05-33 - DEBUG - Parsing storage from <https://api.osf.io/v2/nodes/ukry4/files/osfstorage/>
+2020-03-28 19:05:41,987 - 2020-03-28T19-05-33 - DEBUG - api.osf.io "GET /v2/nodes/3fqsu/children?" 200
+2020-03-28 19:05:41,987 - 2020-03-28T19-05-33 - DEBUG - Parsing children from <https://api.osf.io/v2/nodes/3fqsu/children/>
+2020-03-28 19:05:42,676 - 2020-03-28T19-05-33 - DEBUG - api.osf.io "GET /v2/nodes/3fqsu/files/osfstorage?" 200
+2020-03-28 19:05:42,676 - 2020-03-28T19-05-33 - DEBUG - Parsing storage from <https://api.osf.io/v2/nodes/3fqsu/files/osfstorage/>
+2020-03-28 19:05:42,960 - 2020-03-28T19-05-33 - DEBUG - api.osf.io "GET /v2/nodes/jpz3u/children?" 200
+2020-03-28 19:05:42,961 - 2020-03-28T19-05-33 - DEBUG - Parsing children from <https://api.osf.io/v2/nodes/jpz3u/children/>
+2020-03-28 19:05:43,335 - 2020-03-28T19-05-33 - DEBUG - api.osf.io "GET /v2/nodes/jpz3u/files/osfstorage?" 200
+2020-03-28 19:05:43,335 - 2020-03-28T19-05-33 - DEBUG - Parsing storage from <https://api.osf.io/v2/nodes/jpz3u/files/osfstorage/>
+2020-03-28 19:05:43,640 - 2020-03-28T19-05-33 - DEBUG - api.osf.io "GET /v2/nodes/5ug3b/children?" 200
+2020-03-28 19:05:43,640 - 2020-03-28T19-05-33 - DEBUG - Parsing children from <https://api.osf.io/v2/nodes/5ug3b/children/>
+2020-03-28 19:05:44,061 - 2020-03-28T19-05-33 - DEBUG - api.osf.io "GET /v2/nodes/5ug3b/files/osfstorage?" 200
+2020-03-28 19:05:44,061 - 2020-03-28T19-05-33 - DEBUG - Parsing storage from <https://api.osf.io/v2/nodes/5ug3b/files/osfstorage/>

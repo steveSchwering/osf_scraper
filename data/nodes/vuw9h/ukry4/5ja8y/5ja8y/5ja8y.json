@@ -1,0 +1,53 @@
+{
+    "accessed_datetime": "2020-03-28T19:54:34",
+    "ancestors": [
+        "vuw9h",
+        "ukry4",
+        "5ja8y"
+    ],
+    "attributes": {
+        "category": "project",
+        "date_created": "2019-10-29T18:14:08.582503",
+        "date_modified": "2020-03-02T22:00:04.567945",
+        "description": "Data and analysis for Greene, N.R., Naveh-Benjamin, M., &amp; Cowan, N. Adult Age Differences in Working Memory Capacity: Deficits in Peripheral but Not Central Storage Mechanisms",
+        "id": "5ja8y",
+        "preprint": false,
+        "public": true,
+        "registration": false,
+        "tags": [
+            "aging",
+            "attention",
+            "working memory"
+        ],
+        "title": "Adult Age Differences in Working Memory Capacity: Deficits in Peripheral but Not Central Storage Mechanisms",
+        "wiki": true
+    },
+    "children": [],
+    "files": [
+        {
+            "attributes": {
+                "date_created": null,
+                "date_modified": null,
+                "guid": null,
+                "kind": "folder",
+                "name": "Data and Analysis",
+                "size": null
+            },
+            "id": "5db9c370af84c3000be6a77c",
+            "links": {
+                "download_link": null,
+                "self_link": "https://api.osf.io/v2/files/5db9c370af84c3000be6a77c/"
+            }
+        }
+    ],
+    "links": {
+        "children_link": "https://api.osf.io/v2/nodes/5ja8y/children/",
+        "files_link": "https://api.osf.io/v2/nodes/5ja8y/files/",
+        "self_link": "https://api.osf.io/v2/nodes/5ja8y/"
+    },
+    "parent": null,
+    "searched": {
+        "children": true,
+        "files": true
+    }
+}
